@@ -40,5 +40,5 @@ app.delete("/notes/:id", (req, res) => {
   res.end();
 });
 
-const port = process.env.PORT || 7070;
+const port = import.meta.env.PORT || 7070;
 app.listen(port, () => console.log(`The server is running on http://localhost:${port}`));
