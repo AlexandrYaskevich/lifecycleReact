@@ -7,12 +7,12 @@ const app = express();
 app.use(cors());
 app.use(
   bodyParser.json({
-    type(req) {
+    type() {
       return true;
     },
   })
 );
-app.use(function (req, res, next) {
+app.use(function (res, next) {
   res.setHeader('Content-Type', 'application/json');
   next();
 });
@@ -20,7 +20,7 @@ app.use(function (req, res, next) {
 const notes = [];
 let nextId = 1;
 
-app.get("/notes", (req, res) => {
+app.get("/notes", (res) => {
   res.send(JSON.stringify(notes));
 });
 

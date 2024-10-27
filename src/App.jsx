@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import  { Component } from 'react'
 import "./App.css";
 import Notes from "./components/Notes";
 import NewNote from "./components/NewNote";
