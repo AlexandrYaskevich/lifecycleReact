@@ -22,7 +22,7 @@ export default class App extends Component {
     this.setState({
       isLoading: true,
     });
-    fetch(import.meta.env.REACT_APP_NOTES_URL)
+    fetch(import.meta.env.VITE_APP_NOTES_URL)
       .then((response) => response.json())
       .then((result) => {
         this.setState({
@@ -47,7 +47,7 @@ export default class App extends Component {
       },
       body: JSON.stringify({ id: note.id, content: note.content }),
     };
-    fetch(import.meta.env.REACT_APP_NOTES_URL, requestOptions).then(() =>
+    fetch(import.meta.env.VITE_APP_NOTES_URL, requestOptions).then(() =>
       this.loadData()
     );
   };
@@ -56,7 +56,7 @@ export default class App extends Component {
     const requestOptions = {
       method: "DELETE",
     };
-    fetch(`${import.meta.env.REACT_APP_NOTES_URL}/${id}`, requestOptions).then(() =>
+    fetch(`${import.meta.env.VITE_APP_NOTES_URL}/${id}`, requestOptions).then(() =>
       this.loadData()
     );
   };
